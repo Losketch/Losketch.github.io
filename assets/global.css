@@ -1,0 +1,164 @@
+﻿.ErrMsg {
+	font-size: 10pt;
+	color: #FF0000;
+}
+
+td {
+	font-size: 10pt;
+}
+
+th {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+.errorlist {
+	font-size: 10pt;
+	color: #FF0000;
+}
+
+.hintlist {
+	font-size: 10pt;
+	color: #FF0000;
+	list-style-position: inside; 
+	list-style-type: circle; 
+	float:left; margin:0px;
+}
+
+.BlueText {
+	font-size: 10pt;
+	font-weight: bold;
+	color: #555555;
+}
+
+.RedText {
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FF0000;
+}
+.InlineImage{
+	display: inlin-block;
+}
+
+.WhiteBold {
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+a.WhiteBold:link {
+	font-weight: bold;
+	color: #FFFFFF;
+}
+a.WhiteBold:visited {
+	font-weight: bold;
+	color: #FFFFFF;
+}
+a.WhiteBold:hover {
+	font-weight: bold;
+	color: #FFFFFF;
+}
+a.WhiteBold:active {
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.GrayBold {
+	font-size: 14pt;
+	font-weight: bold;
+	color: #dddddd;
+	padding-top: 1em;
+}
+a.GrayBold:link {
+	font-size: 14pt;
+	font-weight: bold;
+	color: #dddddd;
+}
+a.GrayBold:visited {
+	font-size: 14pt;
+	font-weight: bold;
+	color: #dddddd;
+}
+a.GrayBold:hover {
+	font-size: 14pt;
+	font-weight: bold;
+	color: #dddddd;
+}
+a.GrayBold:active {
+	font-size: 14pt;
+	font-weight: bold;
+	color: #dddddd;
+}
+
+a.redlink {
+	font-weight: normal;
+	color: #FF0000;
+}
+
+.bottomBlueBorder {
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: dashed;
+	border-left-style: none;
+	border-bottom-color: #555555;
+}
+
+.bottomRedBorder {
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: dashed;
+	border-left-style: none;
+	border-bottom-color: #FF0000;
+}
+
+.obListTableHeader {
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #FF5001;
+	border-color: #FFFFFF;
+}
+.tdReference{
+	font-weight: nomal;
+	color: #FFFFFF;
+	background-color: #FF5001;
+	border-color: #FFFFFF;
+}
+
+.obListTableHighlightRow {
+	font-weight: bold;
+	color: #FF0000;
+	background-color: #FFFF00;
+}
+
+.obListTableHightRow {
+	font-weight: bold;
+	color: #FF0000;
+	background-color: #FFFF00;
+}
+
+#TopicContent p {
+	line-height: 200%;
+	text-indent: 2em;
+	text-align: left;
+}
+
+.longtext {
+	line-height: 200%;
+	text-indent: 2em;
+	text-align: left;
+}
+
+.ieaunicode{
+	font-family: 'IeaUnicode' !important;
+}
+
+.TibetanText {
+	font-size: 16pt;
+	font-family: "微软雅黑";
+}
+
+h1 {
+	line-height: 300%;
+}
+
