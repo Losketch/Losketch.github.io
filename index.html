@@ -1,388 +1,212 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 遍黑体项目网站 </title>
-    <link rel="icon" href="./assets/logo.svg">
-    <link rel="stylesheet" href="./assets/bootstrap.min.css">
-    <link href="./assets/global.css" rel="stylesheet">
-    <style type="text/css">
-        td img {
-            display: block;
-        }
-        body {
-            padding: 0;
-            margin: 0;
-            background-color: #FFFFFF;
-            font-family: -apple-system, system-ui, ui-sans-serif, sans-serif, emoji;
-            min-width: 100% !important;
-        }
-        table {
-            border-spacing: 0;
-            border-collapse: collapse;
-            font-size: 13pt;
-        }
-        table td {
-            padding: 3px 10px;
-            border: 1px solid #d0d7de;
-            font-size: 13pt;
-            font-family: system-ui, ui-sans-serif, sans-serif, emoji;
-        }
-        th {
-            padding: 3px 10px;
-            border: 1px solid #d0d7de;
-            font-size: 15pt;
-            font-family: system-ui, ui-sans-serif, sans-serif, emoji;
-            font-weight: 500;
-        }
-    </style>
-    <style type="text/css">
-        html {
-            font-size: 10pt;
-        }
-        h1 {
-            color: #0045f5;
-            font-size: 16pt;
-            font-weight: bold;
-            text-align: center;
-        }
-        h2, h3, h4, h5 {
-            color: #0045f5;
-            font-size: 12pt;
-            font-weight: bold;
-        }
-        .container {
-            font-size: 14pt;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            width: 95%;
-        }
-        .titlesection {
-            background-color: #F0F0F0;
-        }
-        .navbar {
-            padding: 1px 0px 0px 0px;
-        }
-        .bg_zhaohang {
-            background-color: rgb(216, 255, 255); !important;
-        }
-        .bg-info {
-            background-color: rgb(216, 255, 255); !important;
-        }
-        .btn-info {
-            background-color: #0045f5;
-            border-color: #0045f5;
-        }
-        .nav-link {
-            font-size: 13pt;
-            font-weight: bold;
-        }
-        #id_search_result {
-            margin-left: 5px;
-            margin-right: 5px;
-        }
-        .top_title {
-            color: #0045f5;
-            font-size: 24pt;
-            font-weight: bold;
-            font-family: system-ui, ui-sans-serif, sans-serif, emoji;
-        }
-        .height60{
-            height: 60px;
-        }
-        .title_row {
-            width: 100%;
-        }
-        .nav-link {
-            color: #0045f5;
-            background-color: #FFFFFF;
-            border: 0px solid #0045f5;
-            font-family: system-ui, ui-sans-serif, sans-serif, emoji;
-        }
-        .shadow{
-            box-shadow: 0px 0px 10px rgba(136, 131, 131, 0.3);
-        }
-        .nav-tabs .nav-item {
-            margin-left: 5px;
-        }
-        .nav-tabs .nav-link.active {
-            color: #0045f5;
-            background-color: #FFFFFF;
-            border: 0 solid #F0F0F0;
-            font-family: system-ui, ui-sans-serif, sans-serif, emoji;
-        }
-        .page-header{
-            font-family: system-ui, ui-sans-serif, sans-serif, emoji;
-        }
-        .nav-tabs {
-            border-bottom: 0 solid #dee2e6;
-        }
-        .navbar-collapse.collapse {
-            display: block !important;
-        }
-        .navbar-nav > li, .navbar-nav {
-            float: left !important;
-        }
-        .navbar-nav.navbar-right:last-child {
-            margin-right: -15px !important;
-        }
-        .navbar-right {
-            float: right !important;
-        }
-        .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-            color: #0045f5;
-        }
-        .navbar-light .navbar-nav .nav-link {
-            color: #0045f5;
-        }
-    </style>
+<html lang="zh_cn">
+<head>
+  <title>遍黑体项目网站</title>
+  <meta charset="utf-8">
+  <link rel="icon" href="./assets/img/logo.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="Bucky Maler">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body align="center">
+<body>
 
-<nav class="navbar navbar-expand sticky-top navbar-light bg-white">
-    <div class="container">
-        <div class="row bg-white w-100">
-            <div class="col-12 top_title height60">
-                <img src="./assets/logo.svg" height="55">
-                <span>遍黑体项目网站</span> <br>
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="#0">
+            <img src="./assets/img/logo.svg" style="height:3em" alt="Global">
+            <p>遍黑体项目网站</p>
+          </a>
+          <button class="header--cta cta">下载遍黑体</button>
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>首页</span></li>
+            <li><span>团队</span></li>
+            <li><span>简介</span></li>
+            <li><span>联系</span></li>
+            <li><span>下载</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <h1>[hulenkius施工中]<br>掇月充形<br>八万纬经</h1>
+                <button class="cta">下载遍黑体
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                  <span class="btn-background"></span>
+                </button>
+		<p><a href="https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project" style="color: unset !important"><button>前往遍黑体 Github 页面
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+			<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+			  <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+			</g>
+			</svg>
+			<span class="btn-background"></span>
+		      </button></a>
+                <img src="assets/img/introduction-visual.png" alt="Welcome">
+              </div>
+              <div class="intro--options">
+                <a href="#0">
+                  <h3>CJK 扩展区字形支持</h3>
+                  <p>遍黑体支持中日韩统一表意文字扩展 C-I 区的所有字形及部分扩展 B 区的字形。</p>
+                </a>
+                <a href="#0">
+                  <h3>国标化笔形</h3>
+                  <p>遍黑体秉持国标化字形理念，符合中国大陆使用者的用字习惯。</p>
+                </a>
+                <a href="https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project?tab=readme-ov-file#%E5%AD%97%E4%BD%93%E6%8E%88%E6%9D%83">
+                  <h3>开源自由</h3>
+                  <p>遍黑体基于开源自由的思源黑体制作，并无偿发放使用。</p>
+                </a>
+              </div>
             </div>
-            </div>
-        </div>
-    </nav>
-    <nav class="navbar navbar-expand sticky-top navbar-light shadow bg-white">
-    <div class="container">
-        <div class="row bg-white w-100">
-            <div class="col-12 collapse navbar-collapse height60 align-baseline" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto nav-tabs w-100">
-                    
-    <li class="nav-item"><a class="nav-link" href="#intro">简介</a></li>
-    <li class="nav-item"><a class="nav-link" href="#valueview">核心价值观</a></li>
-    <li class="nav-item"><a class="nav-link" href="#kouhao">口号</a></li>
-    <li class="nav-item"><a class="nav-link" href="#product">产品</a></li>
-    <li class="nav-item"><a class="nav-link" href="#download">下载地址</a></li>
-    <li class="nav-item"><a class="nav-link" href="#contact">联系我们</a></li>
-
+          </li>
+          <li class="l-section section">
+            <div class="work">
+              <h2>团队成员</h2>
+              <div class="work--lockup">
+                <ul class="slider">
+                  <li class="slider--item slider--item-left">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="https://img.vistudium.top/emoji/1f602.png" alt="名字1">
+                      </div>
+                      <p class="slider--item-title">名字1</p>
+                      <p class="slider--item-description">這裏放分工1</p>
+                    </a>
+                  </li>
+                  <li class="slider--item slider--item-center">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="https://avatars.githubusercontent.com/u/82664718" alt="Fitzgerald">
+                      </div>
+                      <p class="slider--item-title">Fitzgerald</p>
+                      <p class="slider--item-description">阿巴阿巴</p>
+                    </a>
+                  </li>
+                  <li class="slider--item slider--item-right">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="https://img.vistudium.top/emoji/1f620.png" alt="名字2">
+                      </div>
+                      <p class="slider--item-title">名字2</p>
+                      <p class="slider--item-description">這裏放分工2</p>
+                    </a>
+                  </li>
                 </ul>
+                <div class="slider--prev">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
+                  </g>
+                  </svg>
+                </div>
+                <div class="slider--next">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                </div>
+              </div>
             </div>
-        </div>
+          </li>
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+                <h2>遍黑体<span style="font-weight:100">的<br>风格和故事</span><br>[此处没做完]</h2>
+                <a href="#0">观看遍黑体 PV
+                  <span>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                    </g>
+                    </svg>
+                  </span>
+                </a>
+                <img src="assets/img/about-visual.png" alt="About Us">
+              </div>
+              <div class="about--options">
+                <a href="#0">
+                  <h3>Winners</h3>
+                </a>
+                <a href="#0">
+                  <h3>Philosophy</h3>
+                </a>
+                <a href="#0">
+                  <h3>History</h3>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="contact">
+              <div class="contact--lockup">
+                <div class="modal">
+                  <div class="modal--information">
+                    <p>欢迎加入遍黑体讨论QQ群</p>
+                    <p>您可以查找群号：</p>
+                    <p>1135661191</p>
+		    <hr style="opacity: 30%;margin-bottom: 1.5em;margin-top:1.5em;">
+		    <p>想要赞助我们？</p>
+		    <p>您可以前往此处向我们捐款：<br>
+		<a href=https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project?tab=readme-ov-file#%E6%94%AF%E6%8C%81%E6%88%91%E4%BB%AC">→ 访问赞助链接</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="hire">
+              <h2>下载遍黑体</h2>
+              <!-- checkout formspree.io for easy form setup -->
+              <form class="work-request">
+                <div class="work-request--options">
+                  <span class="options-b">
+                    <label for="opt-4">
+			<a href="https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/releases" style="color: unset !important;">
+                    	  前往 Github Releases
+			</a>
+                    </label>
+                    </label>
+                  </span>
+                </div>
+		<!--下叉-->
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-</nav>
-
-<div class="bg-transparent">
-    <div class="container">
-        <div class="page-header mt-5">
-            <i id="intro"> </i><h1> 简介  </h1>  
-        </div>
-    </div>
+  </div>
+  <ul class="outer-nav">
+    <li class="is-active">首页</li>
+    <li>团队</li>
+    <li>简介</li>
+    <li>联系</li>
+    <li>下载</li>
+  </ul>
 </div>
-<div class="bg-transparent">
-        <div id="content">
-            
-    <style type="text/css">
-        p {
-            text-indent: 2em;
-        }
-    </style>
-    <div class="row bg-white">
-        <div class="container pb-0 bg-transparent">
-            <p>黑体项目是一个基于<a href="https://github.com/adobe-fonts/source-han-sans">思源黑体</a>，并以中国大陆字形为标准的对中日韩越统一表意文字扩展区进行字形补充的项目。</p>
-            <p>是「遍宇宙家族」中的一个子项目，该项目于 2020 年 6 月前后启动。</p>
-            <i id="valueview"> </i>
-        </div>
-    </div>
-    <div class="row bg-light">
-        <div class="container">
-            <div class="page-header mt-5">
-                <h1>核心价值观</h1>
-            </div>
-        </div>
-    </div>
-    <div class="row bg-light">
-        <div class="container pb-0 bg-transparent mb-5">
-            <p>1. 开源创新：通过开放的合作模式，促进字体设计和开发的创新。</p>
-            <p>2. 文化保护：致力于保护和传承中日韩等语言的书写文化。</p>
-            <p>3. 广泛适用：为多种操作系统提供兼容解决方案，满足全球各行业对文字处理的需求。</p>
-            <i id="kouhao"> </i>
-        </div>
-    </div>
-    <div class="row bg-white">
-        <div class="container">
-            <div class="page-header mt-5">
-                <h1>口号</h1>
-            </div>
-        </div>
-    </div>
-    <div class="row bg-white">
-        <div class="container pb-0 bg-transparent mb-5">
-            <p>“字体与文化，共创未来！”</p>
-            <i id="product"> </i>
-        </div>
-    </div>
 
-    <div class="row bg-light">
-        <div class="container">
-            <div class="page-header mt-5">
-                <h1>产品</h1>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="container pb-0 bg-transparent">
-            <div class="row">
-                <div class="col-12">
-                    <p>跟踪最新版国家标准GB 18030-2022和国际标准ISO/IEC 10646/Unicode，在国家标准和国际标准的框架下提供字体。</p>
-                    <p>遍黑体项目分为两个主要部分：</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row bg-white">
-        <div class="container">
-            <div class="page-header mt-5">
-                <h1>Part 1</h1>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="container pb-0 bg-transparent">
-            <div class="row">
-                <div class="col-8">
-                    <p>遍黑体项目的Part 1 主要致力于扩展中日韩统一表意文字的字符集</p>
-                    <p>包括但不限于以下区域：</p>
-                    <ul>
-                        <li>支持中日韩統一表意文字扩展A, B, C, D, E, F, I, 兼容和兼容补充区共 61,994 个汉字</li>
-                        <li>提供了TrueType字体（TTF）和OpenType字体（OTF）</li>
-                    </ul>
-                    <div style="padding-left: 30px;"><table>
-                        <thead>
-                            <tr><th>区块</th><th>字符数</th><th>支援状态</th><th>测试文本</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>中日韩统一汉字</td><td>20,992</td><td>部分支持</td><td>鿶鿷鿸鿹鿺鿻鿼鿽鿾鿿</td></tr>
-                            <tr><td>中日韩统一汉字扩展A</td><td>6,592</td><td>部分支持</td><td>䶶䶷䶸䶹䶺䶻䶼䶽䶾䶿</td></tr>
-                            <tr><td>中日韩统一汉字扩展B</td><td>42,720</td><td>部分支持</td><td>𠀀𪛗𪛘𪛙𪛚𪛛𪛜𪛝𪛞𪛟</td></tr>
-                            <tr><td>中日韩统一汉字扩展C</td><td>4,155</td><td>完全支持</td><td>𫜱𫜲𫜳𫜴𫜵𫜶𫜷𫜸𫜹𫜺</td></tr>
-                            <tr><td>中日韩统一汉字扩展D</td><td>222</td><td>完全支持</td><td>𫠔𫠕𫠖𫠗𫠘𫠙𫠚𫠛𫠜𫠝</td></tr>
-                            <tr><td>中日韩统一汉字扩展E</td><td>5,752</td><td>完全支持</td><td>𬺘𬺙𬺚𬺛𬺜𬺝𬺞𬺟𬺠𬺡</td></tr>
-                            <tr><td>中日韩统一汉字扩展F</td><td>7,473</td><td>完全支持</td><td>𬺰𬺱𬺲𬺳𬺴𬺵𬺶𬺷𬺸𬺹</td></tr>
-                            <tr><td>中日韩统一汉字扩展I</td><td>622</td><td>完全支持</td><td>𮯰𮯱𮯲𮯳𮯴𮯵𮯶𮹛𮹜𮹝</td></tr>
-                            <tr><td>中日韩兼容汉字</td><td>472</td><td>完全支持</td><td>豈更車賈滑𥉉𥳐𧻓齃龎</td></tr>
-                            <tr><td>中日韩兼容汉字补充</td><td>542</td><td>完全支持</td><td>丽丸乁𠄢你鼅鼏鼖鼻𪘀</td></tr>
-                        </tbody>
-                    </table></div>
-                </div>
-            </div>
-        </div>
-    </div>
-        <div class="row bg-white">
-        <div class="container">
-            <div class="page-header mt-5">
-                <h1>Part 2</h1>
-            </div>
-        </div>
-    </div>
-    <div class="row bg-light">
-        <div class="container pb-0 bg-transparent">
-            <div class="row mb-5">
-                <div class="col-7">
-                    <p>遍黑体项目的Part 2 主要涵盖其他语言及特殊领域的字符需求</p>
-                    <p>包括但不限于以下内容：</p>
-                    <ul>
-                        <li>支持中日韩統一表意文字扩展G, H, J区和其他非汉字区的Unicode前沿字符，共 13,431 个汉字</li>
-                        <li>符号及特殊字符：数学符号、货币符号、技术符号等特殊字符的支持。</li>
-                        <li>提供了TrueType字体（TTF）和OpenType字体（OTF）</li>
-                    </ul>
-                    <div style="padding-left: 30px;"><table>
-                        <thead>
-                            <tr><th>区块</th><th>字符数</th><th>支援状态</th><th>测试文本</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>中日韩统一汉字扩展G</td><td>4,939</td><td>完全支持</td><td>𰀀𰀁𰀂𰀃𰀄𱍆𱍇𱍈𱍉𱍊</td></tr>
-                            <tr><td>中日韩统一汉字扩展H</td><td>4,192</td><td>完全支持</td><td>𱍐𱍑𱍒𱍓𱍔𲎫𲎬𲎭𲎮𲎯</td></tr>
-                            <tr><td>中日韩统一汉字扩展J</td><td>4,300</td><td>部分支持</td><td>𲎰𲎱𲎲𲎳𲎴𳑷𳑸𳑹𳑺𳑻</td></tr>
-                        </tbody>
-                    </table></div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row bg-white">
-    <i id="download"> </i>
-        <div class="container">
-            <div class="page-header mt-5">
-                <h1>下载地址</h1>
-            </div>
-        </div>
-    </div>
-    <div class="row bg-white">
-        <div class="container pb-0 bg-transparent">
-            <div class="row mb-5">
-                <div class="col-7">
-                    <p>您可以从以下位置获取遍黑体项目的字体文件：</p>
-                    <ul>
-                        <li>GitHub主页：在我们的GitHub仓库 <a href="https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project">Plangothic GitHub</a> 获取最新的字体文件。</li>
-                        <li>GitHub 全部字体：<a href="https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/archive/refs/heads/main.zip">Plangothic all</a></li>
-                        <li>镜像网站：<a href="https://github.moeyy.xyz/https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/archive/refs/heads/main.zip">Plangothic all</a></li>
-                    </ul>
-                    <div style="padding-left: 30px;"><table>
-                    选择下载：
-                        <thead>
-                            <tr><th>P1a</th><th>P1f</th><th>P2</th><th>ttc</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td><a href="https://raw.github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/main/PlangothicP1-Regular%20(allideo).ttf">ttf</a></td><td><a href="https://raw.github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/main/PlangothicP1-Regular%20(fallback).ttf">ttf</a></td><td><a href="https://raw.github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/main/PlangothicP2-Regular.ttf">ttf</a></td><td><a href="https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/raw/main/Plangothic.ttc">ttc</a></td></tr>
-                            <tr><td><a href="https://raw.github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/main/PlangothicP1-Regular%20(allideo).otf">otf</a></td><td><a href="https://raw.github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/main/PlangothicP1-Regular%20(fallback).otf">otf</a></td><td><a href="https://raw.github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/main/PlangothicP2-Regular.otf">otf</a></td><td>---</td></tr>
-                        </tbody>
-                    </table></div>
-                    <div style="padding-left: 30px;"><table>
-                    选择下载（镜像）：
-                        <thead>
-                            <tr><th>P1a</th><th>P1f</th><th>P2</th><th>ttc</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td><a href="https://github.moeyy.xyz/https://raw.github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/main/PlangothicP1-Regular%20(allideo).ttf">ttf</a></td><td><a href="https://github.moeyy.xyz/https://raw.github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/main/PlangothicP1-Regular%20(fallback).ttf">ttf</a></td><td><a href="https://github.moeyy.xyz/https://raw.github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/main/PlangothicP2-Regular.ttf">ttf</a></td><td><a href="https://github.moeyy.xyz/https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/raw/main/Plangothic.ttc">ttc</a></td></tr>
-                            <tr><td><a href="https://github.moeyy.xyz/https://raw.github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/main/PlangothicP1-Regular%20(allideo).otf">otf</a></td><td><a href="https://github.moeyy.xyz/https://raw.github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/main/PlangothicP1-Regular%20(fallback).otf">otf</a></td><td><a href="https://github.moeyy.xyz/https://raw.github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project/main/PlangothicP2-Regular.otf">otf</a></td><td>---</td></tr>
-                        </tbody>
-                    </table></div>
-                </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<i id="contact"> </i>
-    <div class="row bg-light">
-        <div class="container">
-            <div class="page-header mt-5">
-                <h1>联系我们</h1>
-            </div>
-        </div>
-    </div>
-    <div class="row bg-light">
-        <div class="container pb-0 bg-transparent">
-            <div class="row mb-5">
-                <div class="col-12 text-center">
-                    <img src="./assets/qq.jpg" width="200">
-                </div>
-            </div>
-        </div>
-    </div>
-
-        </div>
-</div>
-<footer class="footer bg_zhaohang">
-    <div class="container bg-info">
-        <div class="row">
-            <div class="col-4 text-right">&nbsp;</div>
-            <div class="col-4 text-center"><div class="text-white"><a class="text-white">遍黑体项目网站维护组&nbsp; 版权所有 (c) 2024</a><br>
-            <a class="text-white">推荐使用Chrome、Firefox浏览器</a><br>
-            <a class="text-white">1280*1024以上的分辨率</a><br>
-            <div class="col-4 text-center"></div>
-        </div>
-
-    </div>
-</footer>
-
-
-</body></html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
+</body>
+</html>
