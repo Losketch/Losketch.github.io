@@ -5,20 +5,35 @@
 	src: local("PICO Sans SC"), local("MiSans"), local("PingFang SC"), local("Noto Sans SC"), local("Source Han Sans CN"), local("Source Han Sans K"), local("Noto Sans KR"), local("SimHei");
 	unicode-range: U+2014-2015, U+00B7, U+2026, U+2018-2019, U+201C-201D;
 }
-}
+@font-face {
+    font-family:"Plgo";
+    src: url("./Plgo.woff2") format("woff2");}
 
-body {
-	font-family: "Sinopunc", "IDC", -apple-system, BlinkMacSystemFont, "SF Pro", "Inter Variable", "Inter", "Segoe UI Variable", "Segoe UI", "Arial", sans-serif;
+html, body {
+	font-family: "Sinopunc", "IDC", 'Plgo', -apple-system, BlinkMacSystemFont, "SF Pro", "Inter Variable", "Inter", "Segoe UI Variable", "Segoe UI", "Arial", sans-serif;
+	overflow: hidden;
 }
 
 html {
-	font-family: "Sinopunc", "IDC", -apple-system, BlinkMacSystemFont, "SF Pro", "Inter Variable", "Inter", "Segoe UI Variable", "Segoe UI", "Arial", sans-serif;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%
 }
 
 body {
 	margin: 0
+}
+
+#background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
 article,
@@ -260,7 +275,8 @@ body {
 	font-size: 14px;
 	line-height: 1.6;
 	color: #fff;
-	background-image: url("../img/background.webp");
+	background: #0a0a0a;
+	background-image: url('../img/background.svg');
 	background-position: center;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%
@@ -1218,15 +1234,15 @@ body {
 }
 
 .about--options>a:nth-child(1) {
-	background-image: url("../img/about-winners.jpg")
+	background-image: url("../img/about-winners.webp")
 }
 
 .about--options>a:nth-child(2) {
-	background-image: url("../img/about-philosophy.jpg")
+	background-image: url("../img/about-philosophy.webp")
 }
 
 .about--options>a:nth-child(3) {
-	background-image: url("../img/about-history.jpg")
+	background-image: url("../img/about-history.webp")
 }
 
 .about--options>a:hover h3 {
