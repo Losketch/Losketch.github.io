@@ -12,6 +12,7 @@
 html, body {
 	font-family: "Sinopunc", "IDC", 'Plgo', -apple-system, BlinkMacSystemFont, "SF Pro", "Inter Variable", "Inter", "Segoe UI Variable", "Segoe UI", "Arial", sans-serif;
 	overflow: hidden;
+        touch-action: none;
 }
 
 html {
