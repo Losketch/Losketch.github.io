@@ -7,14 +7,88 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            line-height: 1.6;
+            margin: 10px;
+            line-height: 1.4;
+            background: #f5f5f5;
         }
+
         .info {
-            background: #f0f0f0;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            max-width: 100%;
+        }
+
+        .section {
+            flex: 1 1 250px; /* 减小最小宽度 */
+            max-width: calc(33.33% - 10px); /* 确保在大屏幕上最多3列 */
+            margin: 0;
+            padding: 12px;
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 0.9em; /* 稍微减小字体 */
+            align-self: flex-start; /* 防止拉伸 */
+            box-sizing: border-box;
+        }
+        .section:first-child, .section:last-child {
+            flex: 0 0 97vw;
+            max-width: none;
+        }
+
+        .section strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 1em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 4px;
+        }
+
+        .feature-support {
+            color: #00796b;
+            font-weight: 500;
+        }
+
+        .feature-unsupport {
+            color: #d32f2f;
+            font-weight: 500;
+        }
+        .value {
+            font-weight: 500;
+            color: #2196F3;
+        }
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .section {
+                flex: 1 1 200px;
+                max-width: calc(50% - 10px); /* 中等屏幕2列 */
+                font-size: 0.85em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                margin: 5px;
+            }
+            .info {
+                gap: 5px;
+            }
+            .section {
+                flex: 1 1 100%;
+                max-width: 100%; /* 小屏幕1列 */
+                padding: 8px;
+                font-size: 0.8em;
+            }
+        }
+        /* 优化内容显示 */
+        .section br {
+            line-height: 1.8;
+        }
+        .section span {
+            display: inline-block;
         }
     </style>
 </head>
@@ -22,34 +96,220 @@
     <div class="info" id="systemInfo"></div>
 
     <script>
-        function detectSystem() {
+        async function detectDetailedSystem() {
             let info = '';
-            
-            // 获取操作系统信息
-            let os = "未知操作系统";
-            let userAgent = navigator.userAgent;
-            
-            if (userAgent.indexOf("Windows") != -1) os = "Windows";
-            else if (userAgent.indexOf("Mac") != -1) os = "MacOS";
-            else if (userAgent.indexOf("Linux") != -1) os = "Linux";
-            else if (userAgent.indexOf("Android") != -1) os = "Android";
-            else if (userAgent.indexOf("like Mac") != -1) os = "iOS";
 
-            // 获取浏览器信息
-            let browser = "未知浏览器";
-            if (userAgent.indexOf("Edge") != -1) browser = "Edge";
-            else if (userAgent.indexOf("Firefox") != -1) browser = "Firefox";
-            else if (userAgent.indexOf("Chrome") != -1) browser = "Chrome";
-            else if (userAgent.indexOf("Safari") != -1) browser = "Safari";
+            // 工具函数：安全获取值
+            const safeGet = (fn, defaultValue = '未知') => {
+                try {
+                    const value = fn();
+                    return value || defaultValue;
+                } catch {
+                    return defaultValue;
+                }
+            };
 
-            info += `操作系统: ${os}<br>`;
-            info += `浏览器: ${browser}<br>`;
-            info += `用户代理字符串: ${userAgent}`;
+            // 工具函数：格式化字节大小
+            const formatBytes = (bytes, decimals = 2) => {
+                if (!bytes || isNaN(bytes)) return '未知';
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(1024));
+                return `${parseFloat((bytes / Math.pow(1024, i)).toFixed(decimals))} ${sizes[i]}`;
+            };
+
+            // 工具函数：格式化毫秒
+            const formatMS = (ms) => {
+                if (!ms || isNaN(ms)) return '未知';
+                return `${ms.toFixed(2)}ms`;
+            };
+
+            // 基本系统信息
+            info += '<div class="section">';
+            info += '<strong>系统信息:</strong>';
+            info += `操作系统: ${navigator.platform}<br>`;
+            info += `用户代理: ${navigator.userAgent}<br>`;
+            info += `应用名称: ${navigator.appName}<br>`;
+            info += `应用版本: ${navigator.appVersion}<br>`;
+            info += `应用代码: ${navigator.appCodeName}<br>`;
+            info += `硬件架构: ${navigator.architecture ?? '未知'}<br>`;
+            info += '</div>';
+
+            // 语言和区域信息
+            info += '<div class="section">';
+            info += '<strong>语言和区域:</strong>';
+            info += `首选语言: ${navigator.language}<br>`;
+            info += `所有语言: ${navigator.languages?.join(', ') || '未知'}<br>`;
+            info += `时区: ${Intl.DateTimeFormat().resolvedOptions().timeZone}<br>`;
+            info += '</div>';
+
+            // 硬件信息
+            info += '<div class="section">';
+            info += '<strong>硬件信息:</strong>';
+            info += `设备内存: ${navigator.deviceMemory || '未知'} GB<br>`;
+            info += `逻辑处理器: ${navigator.hardwareConcurrency || '未知'}<br>`;
+            info += `最大触摸点: ${navigator.maxTouchPoints || '未知'}<br>`;
+            info += `电池状态: <span id="batteryInfo">检测中...</span><br>`;
+            info += `网络类型: ${navigator.connection?.type || '未知'}<br>`;
+            info += '</div>';
+
+            // 显示信息
+            info += '<div class="section">';
+            info += '<strong>显示信息:</strong>';
+            info += `屏幕分辨率: ${safeGet(() => `${window.screen.width}x${window.screen.height}`)}<br>`;
+            info += `可用分辨率: ${safeGet(() => `${window.screen.availWidth}x${window.screen.availHeight}`)}<br>`;
+            info += `像素比: ${safeGet(() => window.devicePixelRatio)}<br>`;
+            info += `颜色深度: ${safeGet(() => `${window.screen.colorDepth}位`)}<br>`;
+            info += `屏幕方向: ${screen.orientation?.type || '未知'}<br>`;
+            info += '</div>';
+
+            // 网络信息
+            info += '<div class="section">';
+            info += '<strong>网络信息:</strong>';
+            if (navigator.connection) {
+                info += `网络类型: ${navigator.connection.effectiveType || '未知'}<br>`;
+                info += `下行速度: ${navigator.connection.downlink || '未知'} Mbps<br>`;
+                info += `往返时间: ${navigator.connection.rtt || '未知'} ms<br>`;
+                info += `数据保护模式: ${navigator.connection.saveData ? '开启' : '关闭'}<br>`;
+            } else {
+                info += '网络信息API不可用<br>';
+            }
+            info += '</div>';
+
+            // GPU信息
+            info += '<div class="section">';
+            info += '<strong>GPU信息:</strong>';
+            try {
+                const canvas = document.createElement('canvas');
+                const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+                if (gl) {
+                    const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+                    if (debugInfo) {
+                        info += `GPU厂商: ${gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL)}<br>`;
+                        info += `GPU渲染器: ${gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)}<br>`;
+                    }
+                }
+            } catch (e) {
+                info += 'GPU信息不可用<br>';
+            }
+            info += '</div>';
+
+            document.getElementById('systemInfo').innerHTML = info;
+
+            // 电池信息（异步获取）
+            try {
+                if ('getBattery' in navigator) {
+                    const battery = await navigator.getBattery();
+                    const batteryInfo = `电量: ${(battery.level * 100).toFixed(1)}%, ${battery.charging ? '正在充电' : '未充电'}`;
+                    document.getElementById('batteryInfo').textContent = batteryInfo;
+                }
+            } catch {
+                document.getElementById('batteryInfo').textContent = '不可用';
+            }
+
+            // 高级系统信息
+            info += '<div class="section">';
+            info += '<strong>高级系统信息:</strong>';
+            info += `移动设备: ${safeGet(() => /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ? '是' : '否')}<br>`;
+            info += `Cookie启用: ${safeGet(() => navigator.cookieEnabled ? '是' : '否')}<br>`;
+            info += `在线状态: ${safeGet(() => navigator.onLine ? '在线' : '离线')}<br>`;
+            info += `设备内存: ${safeGet(() => navigator.deviceMemory ? `${navigator.deviceMemory}GB` : '未知')}<br>`;
+            info += `逻辑处理器: ${safeGet(() => navigator.hardwareConcurrency || '未知')}<br>`;
+            info += '</div>';
+
+            // 性能信息
+            info += '<div class="section">';
+            info += '<strong>性能信息:</strong>';
+            try {
+                const navEntry = performance.getEntriesByType('navigation')[0];
+                if (navEntry) {
+                    info += `页面加载时间: ${formatMS(navEntry.loadEventEnd)}<br>`;
+                    info += `DNS查询时间: ${formatMS(navEntry.domainLookupEnd - navEntry.domainLookupStart)}<br>`;
+                    info += `TCP连接时间: ${formatMS(navEntry.connectEnd - navEntry.connectStart)}<br>`;
+                }
+        
+                // 添加内存信息（仅Chrome支持）
+                if (performance.memory) {
+                    const memory = performance.memory;
+                    info += `可用堆大小: ${(memory.jsHeapSizeLimit / (1024 * 1024)).toFixed(2)} MB<br>`;
+                    info += `当前堆大小: ${(memory.totalJSHeapSize / (1024 * 1024)).toFixed(2)} MB<br>`;
+                    info += `使用堆大小: ${(memory.usedJSHeapSize / (1024 * 1024)).toFixed(2)} MB<br>`;
+                }
+            } catch (e) {
+                info += `获取性能信息失败: ${e.message}<br>`;
+            }
+            info += '</div>';
+
+            // 媒体能力
+            info += '<div class="section">';
+            info += '<strong>媒体能力:</strong>';
+            try {
+                // 检查媒体设备支持
+                const mediaDevicesSupport = 'mediaDevices' in navigator;
+                info += `媒体设备API: ${mediaDevicesSupport ? '支持' : '不支持'}<br>`;
+
+                // 检查具体的媒体功能
+                if (mediaDevicesSupport) {
+                    info += `摄像头访问: ${'getUserMedia' in navigator.mediaDevices ? '支持' : '不支持'}<br>`;
+                    info += `屏幕共享: ${'getDisplayMedia' in navigator.mediaDevices ? '支持' : '不支持'}<br>`;
+                    info += `设备枚举: ${'enumerateDevices' in navigator.mediaDevices ? '支持' : '不支持'}<br>`;
+                }
+
+                // 检查音频上下文支持
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                info += `Web Audio: ${AudioContext ? '支持' : '不支持'}<br>`;
+
+            } catch (e) {
+                info += `获取媒体能力信息失败: ${e.message}<br>`;
+            }
+            info += '</div>';
+
+            // 添加存储信息
+            info += '<div class="section">';
+            info += '<strong>存储信息:</strong>';
+            try {
+                if (navigator.storage && navigator.storage.estimate) {
+                    const estimate = await navigator.storage.estimate();
+                    info += `总存储空间: ${(estimate.quota / (1024 * 1024)).toFixed(2)} MB<br>`;
+                    info += `已使用空间: ${(estimate.usage / (1024 * 1024)).toFixed(2)} MB<br>`;
+                    info += `剩余空间: ${((estimate.quota - estimate.usage) / (1024 * 1024)).toFixed(2)} MB<br>`;
+                }
+            } catch (e) {
+                info += `获取存储信息失败: ${e.message}<br>`;
+            }
+            info += '</div>';
+
+            // 浏览器功能支持
+            info += '<div class="section">';
+            info += '<strong>浏览器功能支持:</strong>';
+            const features = {
+                'WebGL': 'webgl',
+                'WebGL2': 'webgl2',
+                'WebAssembly': 'WebAssembly',
+                'SharedArrayBuffer': 'SharedArrayBuffer',
+                'WebSocket': 'WebSocket',
+                'WebRTC': 'RTCPeerConnection',
+                'Web Workers': 'Worker',
+                'Service Workers': 'serviceWorker',
+                'IndexedDB': 'indexedDB',
+                'Web Audio': 'AudioContext',
+                'Canvas': 'HTMLCanvasElement',
+                'SVG': 'SVGElement',
+                'WebVR': 'getVRDisplays',
+                'Bluetooth': 'bluetooth',
+                'USB': 'usb',
+                'Web Serial': 'serial'
+            };
+
+            for (let [feature, api] of Object.entries(features)) {
+                const supported = api in window || api in navigator;
+                info += `${feature}: <span class="${supported ? 'feature-support' : 'feature-unsupport'}">${supported ? '支持' : '不支持'}</span><br>`;
+            }
+            info += '</div>';
 
             document.getElementById('systemInfo').innerHTML = info;
         }
 
-        detectSystem();
+        detectDetailedSystem();
     </script>
 </body>
 </html>
